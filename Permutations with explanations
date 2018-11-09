@@ -1,8 +1,6 @@
-package Backtracking_Practice;
-
 import java.util.Scanner;
 
-public class Permutations {
+public class Permutations  {
 
 	static Scanner sc = new Scanner(System.in);
 	static int n = sc.nextInt();
@@ -14,7 +12,7 @@ public class Permutations {
 
 	public static void bkt(int k) {
 		for (int i = 1; i <= n; i++) {
-			System.out.println("Begin v[" + k + "] = " + i + "// k = " + k + "   i = " + i);
+			System.out.println("Begin v[" + k + "] = " + i + "    // k = " + k + "   i = " + i);
 			v[k] = i;
 			System.out.println(v[k]);
 			if (valid(k)) {
@@ -22,6 +20,7 @@ public class Permutations {
 					printSolution(v);
 				else {
 					System.out.println("BACK // k = " + (k + 1));
+					System.out.println();
 					bkt(k + 1);
 				}
 
@@ -32,9 +31,10 @@ public class Permutations {
 	public static Boolean valid(int k) {
 		for (int i = 1; i < k; ++i)
 			if (v[k] == v[i]) {
-				System.out.println("Checking if they are different " + " v[" + k + "] with v[" + i + "] // v[k] = " + v[k]
-						+ "    v[i] = " + v[i]);
-				System.out.println("They are not, we'll return false");
+				System.out.println("Checking if v[k] is unique " + " v[" + k + "] with v[" + i + "]     // v[k] = "
+						+ v[k] + "    v[i] = " + v[i]);
+				System.out.println("It already exists, we'll return false");
+				System.out.println();
 				return false;
 			}
 
@@ -42,8 +42,10 @@ public class Permutations {
 	}
 
 	public static void printSolution(int v[]) {
+		System.out.println("This is a solution: ");
 		for (int i = 1; i <= n; i++)
-			System.out.print("This is a solution: " + v[i] + " ");
+			System.out.print(v[i] + " ");
+		System.out.println();
 		System.out.println();
 	}
 
