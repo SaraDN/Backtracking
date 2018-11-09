@@ -32,12 +32,11 @@ public class Permutations {
 	public static Boolean valid(int k) {
 		for (int i = 1; i < k; ++i)
 			if (v[k] == v[i]) {
-				System.out.println("Checking if they are different " + " v[" + k + "] cu v[" + i + "]");
+				System.out.println("Checking if they are different " + " v[" + k + "] and v[" + i + "]");
 				System.out.println(v[k] + " " + v[i]);
         System.out.println("They are not, we'll return false");
 				return false;
 			}
-		System.out.println("It's ok, we'll print it");
 
 		return true;
 	}
