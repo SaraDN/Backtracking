@@ -21,7 +21,7 @@ public class Permutations {
 				if (k == n)
 					printSolution(v);
 				else {
-					System.out.println("BACK");
+					System.out.println("BACK // k = " + (k + 1));
 					bkt(k + 1);
 				}
 
